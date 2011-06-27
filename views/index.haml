@@ -1,0 +1,13 @@
+#editor
+
+:javascript
+ window.onload = function(){
+  var editor = ace.edit("editor");
+  editor.setTheme("ace/theme/twilight");
+  var javascriptMode = require("ace/mode/javascript").Mode;
+  editor.getSession().setMode(new javascriptMode);
+  //unfortunately most of the vim action are not supported...
+  //var vim = require("ace/keyboard/keybinding/vim").Vim;
+  //editor.setKeyboardHandler(vim);
+ };
+.clear
