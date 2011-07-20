@@ -1,13 +1,26 @@
 #editor
+%a.execute{:href=>"#"} execute script
 
 :javascript
- window.onload = function(){
-  var editor = ace.edit("editor");
-  editor.setTheme("ace/theme/twilight");
-  var javascriptMode = require("ace/mode/javascript").Mode;
-  editor.getSession().setMode(new javascriptMode);
-  //unfortunately most of the vim action are not supported...
-  //var vim = require("ace/keyboard/keybinding/vim").Vim;
-  //editor.setKeyboardHandler(vim);
- };
+  $(document).ready(function(){
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    var javascriptMode = require("ace/mode/javascript").Mode;
+    editor.getSession().setMode(new javascriptMode);
+
+    $("a.execute").click(function(){
+      alert("test");
+      alert(editor.getSession().getValue());
+      eval(editor.getSession().getValue());
+      function(editor){
+        alert(editor.getSession());
+        //eval(editor.env.document.toString());
+      }
+    });
+
+
+    //unfortunately most of the vim action are not supported...
+    //var vim = require("ace/keyboard/keybinding/vim").Vim;
+    //editor.setKeyboardHandler(vim);
+   });
 .clear

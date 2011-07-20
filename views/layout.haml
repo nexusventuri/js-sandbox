@@ -1,16 +1,20 @@
 %html
   %head
     %script{:src=>url("/javascripts/underscore.js")}
+
+    %script{:src=>url("/javascripts/jquery-1.6.1.js")}
+    %script{:src=>url("/javascripts/quinit-git.js")}
+
     %script{:src=>url("/javascripts/ace-0.1.6/src/ace.js")}
     %script{:src=>url("/javascripts/ace-0.1.6/src/theme-twilight.js")}
     %script{:src=>url("/javascripts/ace-0.1.6/src/mode-javascript.js")}
     %script{:src=>url("/javascripts/ace-0.1.6/src/keybinding-vim.js")}
     %link{:type=>"text/css", :rel=>"stylesheet", :href=>url("/css/reset.css")}
     %link{:type=>"text/css", :rel=>"stylesheet", :href=>url("/css/common.css")}
+    %link{:type=>"text/css", :rel=>"stylesheet", :href=>url("/css/qunit.git.css")}
   %body
     #page
       #menu
-        %h1= @test
       #main
         =yield
       #footer
